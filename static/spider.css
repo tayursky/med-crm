@@ -1,0 +1,135 @@
+.spider, .spider_partner {
+    color: #000;
+}
+
+.spider__btn {
+    display: inline-block;
+    cursor: pointer;
+    padding: 23px 20px !important;
+    color: #fff !important;
+}
+
+.spider__btn:hover, .spider_partner_btn:hover {
+    background: #2997b4;
+}
+
+.spider_partner_btn {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px !important;
+    color: #fff !important;
+}
+
+.spider .modal-header, .spider_partner .modal-header {
+    padding: .35rem 1rem;
+}
+
+.spider .modal-title, .spider_partner .modal-title {
+    margin: 0;
+    line-height: 1.5;
+    float: left;
+}
+
+
+.spider .modal-header .close, .spider_partner .modal-header .close {
+    padding: .8rem 1rem .7rem;
+    margin: -.35rem -1rem -1rem;
+    border-radius: 0 .2rem 0 0;
+}
+
+.spider .modal-header .close:hover, .spider_partner .modal-header .close:hover {
+    color: #fff;
+    background-color: #19a3c7;
+}
+
+.spider .modal-body, .spider_partner .modal-body {
+    padding: .5rem 0;
+}
+
+.spider .uppercase, .spider_partner .uppercase {
+    text-transform: uppercase;
+}
+
+.spider .spider__done, .spider_partner .spider__done {
+    padding: 20px;
+    font-size: 18px;
+}
+
+.spider .spider__done__title, .spider_partner .spider__done__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.spider .spider__discount, .spider_partner .spider__discount {
+    font-size: 28px;
+    text-align: center;
+    color: #28a747;
+    font-weight: bold;
+    padding: 0 10px 10px;
+}
+
+.spider .form-group, .spider_partner .form-group {
+    margin-bottom: .5rem;
+    padding: 0 15px .5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.spider .form-group:last-child, .spider_partner .form-group:last-child {
+    border-bottom: none;
+}
+
+.spider .form-group.has-errors, .spider_partner .form-group.has-errors {
+    padding: 0 15px .15rem;
+}
+
+.spider .form-block__errors, .spider_partner .form-block__errors {
+    text-align: right;
+    padding: .2rem 15px 0;
+    width: 100%;
+}
+
+.spider .form-block__errors__item, .spider_partner .form-block__errors__item {
+    font-size: 15px;
+    color: #d66262;
+}
+
+.spider .form__label, .spider_partner .form__label {
+    color: #000;
+    text-align: right;
+    padding: 1px 0 0;
+}
+
+.spider .form__select, .spider_partner .form__select {
+    width: 100%;
+    padding: 3px 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+.spider .form__input, .spider_partner .form__input {
+    width: 100%;
+    padding: 1px 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.spider .required_field:before, .spider_partner .required_field:before {
+    content: "*";
+    color: #d66262;
+    font-size: 25px;
+    position: absolute;
+    margin: -6px 0 0 -15px;
+}
+
+
+.spider .modal-footer, .spider_partner .modal-footer {
+    padding: .75rem;
+}
+
+.spider .modal-dialog .btn, .spider_partner .modal-dialog .btn {
+    font-size: .85rem;
+    background-color: #19a3c7;
+    padding: 15px 25px;
+}
+

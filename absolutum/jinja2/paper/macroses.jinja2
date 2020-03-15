@@ -1,0 +1,134 @@
+{% macro render_date(text='', date=None, float='left') %}
+    <div class="date-line{% if float == 'center' %} center{% endif %}"
+            {% if float in ['left', 'right'] %}
+         style="float: {{ float }}"
+            {% endif %}
+    >
+        {% if text %}<span class="text">{{ text }}</span>{% endif %}
+        "
+        <div class="day">
+            {% if date %}{{ date.strftime('%d') }}{% endif %}</div>
+        "
+        <div class="month">
+            {% if date %}{{ date.strftime('%m') }}{% endif %}</div>
+        20
+        <div class="year">{% if date %}{{ date.strftime('%Y')[2:] }}{% endif %}</div>
+        г.
+    </div>
+{% endmacro %}
+
+
+{% macro render_sex(sex=None, float='left') %}
+<div class="sex"
+        {% if float in ['left', 'right'] %}
+     style="float: {{ float }}"
+        {% endif %}
+>
+    {% autoescape on %}
+    Пол муж.<i class="box">{{ 'V' if sex in ['М', 'm'] else '&nbsp;' }}</i>
+    жен.<i class="box">{{ 'V' if sex in ['Ж', 'f'] else '&nbsp;' }}</i>
+    {% endautoescape %}
+</div>
+{% endmacro %}
+
+
+{% macro represent_sex(sex=None) %}
+    {% if sex in ['М', 'm'] %}
+        Гражданин
+    {% else %}
+        Гражданка
+    {% endif %}
+{% endmacro %}
+
+
+{% macro table_family(registration, degree=[], text='Совместно с ней проживают:') %}
+    {% set together = registration.payer.get_registered_people(degree='family') %}
+    {% if together %}
+        {{ text }}
+        <table class="wide">
+            <thead>
+            <tr>
+                <td>Родство</td>
+                <td>Ф.И.О.</td>
+                <td>Дата рождения</td>
+                <td>Дата регистрации</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in together %}
+                <tr>
+                    <td>{{ item.get_payer_degree_display() }}</td>
+                    <td>{{ item.people.full_name }}</td>
+                    <td>{{ date_display(item.people.birth_date) }}</td>
+                    <td>{{ date_display(item.start_date) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endmacro %}
+
+
+{% macro render_snils(number=None, float='left') %}
+    {% set number = number if number else ['']*12 %}
+    <table class="snils{% if float == 'center' %} center{% endif %}"
+            {% if float in ['left', 'right'] %}
+           style="float: {{ float }}"
+            {% endif %}
+    >
+        <tr>
+            <td class="title">
+                СНИЛС
+                <span class="description">(при наличии)</span>
+            </td>
+            {% for n in number %}
+                <td>{{ n }}</td>
+                {% if loop.index in [3, 6] %}
+                    <td>-</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    </table>
+{% endmacro %}
+
+
+{% macro render_bg() %}
+{% set empty = '<div class="bg__item"></div> '*10 %}
+<div class="lines_bg">
+    {% autoescape on %}{{ empty }}{% endautoescape %}
+</div>
+{% endmacro %}
+
+
+{% macro account_compensation_thead(title) %}
+    <thead>
+    <tr class="title">
+        <td colspan="13">{{ title }}</td>
+    </tr>
+    <tr>
+        <td rowspan="3" style="border-bottom: none">Услуга</td>
+        <td colspan="4">Базовый период</td>
+        <td colspan="6">Текущий период</td>
+        <td rowspan="3" style="border-bottom: none">
+            Коэффициент = кол-во единиц в базовом / кол-во единиц в текущем периоде
+        </td>
+        <td rowspan="3" style="border-bottom: none">Источник начисления</td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="border-left: none; border-bottom: none">Объем</td>
+        <td rowspan="2" style="border-bottom: none">Начисление</td>
+        <td rowspan="2" style="border-bottom: none">Компенсация</td>
+        <td rowspan="2" style="border-bottom: none">Итого с учетом компенсации</td>
+        <td rowspan="2" style="border-bottom: none">Объем</td>
+        <td rowspan="2" style="border-bottom: none">Начисление</td>
+        <td colspan="2">По предельному индексу</td>
+        <td colspan="2">Вне действия предельного индекса (100%)</td>
+    </tr>
+    <tr>
+        <td style="border-left: none">Объем</td>
+        <td>Начисление</td>
+        <td>Объем</td>
+        <td>Начисление</td>
+    </tr>
+    </thead>
+{% endmacro %}

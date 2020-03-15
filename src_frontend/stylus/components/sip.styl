@@ -1,0 +1,107 @@
+.sip-call
+  font-size 0
+
+  .el-button
+    text-align center
+    font-size 18px
+    margin 5px 0 5px 0
+    padding 3px 8px 3px 7px
+    border-color color_border
+    border-left 0
+    border-radius 0 3px 3px 0
+
+  input
+    font-size 14px
+    margin 5px 0 !important
+    width calc(100% - 34px) !important
+    border-radius 3px 0 0 3px !important
+
+  &__list
+    border-collapse collapse
+    margin 0
+    width 100%
+
+    &__item
+      line-height normal
+      border-bottom 1px solid color_border
+
+      td
+        vertical-align top
+
+      &__time
+        padding 6px 10px
+        text-align right
+        border-left 1px solid color_border
+        border-right 1px solid color_border
+
+      &__phone
+        padding 6px 10px
+        text-align right
+        border-right 1px solid color_border
+
+      &__person
+        cursor pointer
+        padding 6px 10px
+        border-bottom 1px solid color_border
+
+      &__person:last-child
+        border-bottom none
+
+      &__person:hover
+        background color_gray_middle
+
+      &__btn_add
+        cursor pointer
+        float right
+        font-size 15px !important
+        display inline-block
+        min-height 30px
+        white-space nowrap
+
+        .el-icon-document-add
+          font-size 20px
+          margin 5px 5px 0 8px
+
+        .txt
+          padding 6px 10px 0 0
+          vertical-align top
+          display inline-block
+
+      &__btn_add:hover
+        background-color color_bg_hover
+        color #fff
+
+    //&__item:last-child
+    //  border-bottom none
+
+    &__item:hover
+      background color_gray_lite
+
+
+.sip-get-incoming
+  line-height normal
+  text-align center
+  padding 10px
+
+  i
+    margin 7px 5px 3px 0
+    text-align center
+    color #fff
+
+.sip-get-incoming:hover
+  background color_bg_hover
+
+
+.partner__link
+  display block
+  line-height normal
+  text-align center
+  padding 10px
+
+  i
+    margin 7px 3px 3px
+    text-align center
+    color #fff
+
+.partner__link:hover
+  background color_bg_hover

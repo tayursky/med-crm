@@ -1,0 +1,34 @@
+.deal-reject
+
+  &__list
+    width 100%
+    border-collapse collapse
+    margin 20px 0 0
+    border 1px solid color_border
+
+  &__item:last-child
+    td
+      border-bottom none
+
+  &__item:hover
+    background-color color_gray_middle
+
+  &__item
+    cursor pointer
+
+    td
+      border-bottom 1px solid color_border
+
+    &__date
+      width 120px
+      padding 5px 10px
+      text-align right
+      vertical-align top
+
+  &__persons
+    &__item:last-child
+      border-bottom none
+
+    &__item
+      padding 5px 10px
+      border-bottom 1px solid color_border

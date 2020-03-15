@@ -1,0 +1,128 @@
+.i-day
+
+  &__header
+    padding 10px 0
+
+    .el-button
+      vertical-align top
+      font-size 14px !important
+      padding 8px 12px
+
+      i
+        margin-right 10px
+
+      .el-icon-d-arrow-left
+        margin 0
+
+      .el-icon-d-arrow-right
+        margin 0
+
+  &__master
+    font-size 22px
+    padding 0 0 5px
+
+  &__table
+    width 100%
+    border-bottom 1px solid color_border
+
+    &__head
+
+      &__th
+        text-align left
+        font-weight normal
+
+      //border-right 1px solid color_border
+
+      &__weekday_name
+        color color_main_ligth
+        font-size: 14px;
+        padding: 5px 5px 0 10px;
+
+      &__day
+        color color_main_ligth
+        font-size 28px
+        padding: 2px 10px 0 10px;
+
+    &__group
+      &__td:first-child
+        border-left 1px solid color_border
+
+      &__td
+        cursor default
+        border-top 1px solid color_border
+        border-right 1px solid color_border
+        background-color color_gray_lite
+
+        .name, .count, .master
+          padding 6px 10px
+
+        .count, .master
+          display inline-block
+
+        .count
+          border-right 1px solid color_border
+
+    td:first-child
+      width 100px
+
+    &__td:first-child
+      border-left 1px solid color_border
+
+    &__week
+      display block
+      cursor pointer
+      background-color color_main_ligth
+      min-width 20px
+      height 100px
+
+    &__week:hover
+      background-color color_main_red_focus
+
+    //&__td:hover
+    //  background-color color_gray_lite
+
+    tr
+      cursor pointer
+
+    tr:hover td, tr:hover .day__time, tr:hover .day__person
+      color #000
+      background-color color_bg_lite_hover
+
+    &__td
+      border-right 1px solid color_border
+      vertical-align top
+
+    .day__person
+      vertical-align top
+      border-top 1px solid color_border
+      border-right 1px solid color_border
+
+      &__item
+        display inline-block
+        padding 5px 10px
+
+    //.day__person:hover
+    //  background-color color_gray_lite
+
+    .day__empty
+      border-top 1px solid color_border
+      padding 6px 10px
+
+    .day__deal
+      border-top 1px solid color_border
+      padding 0
+
+      &__time
+        display inline-block
+        padding 6px 10px
+
+
+      &__minutes
+        display inline-block
+        float right
+        padding 6px 0
+        min-width 36px
+        text-align center
+
+      &__comment
+        padding 6px 10px

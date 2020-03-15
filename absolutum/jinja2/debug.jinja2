@@ -1,0 +1,17 @@
+<html lang="ru" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Debug</title>
+</head>
+<body>
+<h1>Debug</h1>
+
+{% for key, data in context.items() %}
+  <p>
+    <strong>{{ key }}</strong><br />
+    {{ data }}
+  </p>
+{% endfor %}
+
+</body>
+</html>
+

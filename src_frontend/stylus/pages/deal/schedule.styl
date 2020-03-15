@@ -1,0 +1,487 @@
+.i-schedule
+
+  &__header
+    padding 10px 0
+
+    .el-button
+      vertical-align top
+      font-size 14px !important
+      padding 8px 12px
+
+      i
+        margin-right 10px
+
+      .el-icon-d-arrow-left
+        margin 0
+
+      .el-icon-d-arrow-right
+        margin 0
+
+    &__title
+      display inline-block
+
+      &__text
+        font-size 22px
+        text-align right
+        margin-top -30px
+        padding 3px 15px 0
+
+      &__picker
+        width 100%
+        opacity 0
+
+        .el-input__inner
+          cursor pointer
+
+  &__filters
+    padding 5px 0
+
+    &__item
+      cursor pointer
+      display inline-block
+      font-size 15px
+      margin-right 1px
+      padding 4px 8px
+      border 1px solid color_border
+
+    &__item.selected
+      color #fff
+      background-color color_gray_dark
+
+    &__item:hover
+      color #000
+      background-color color_gray_lite
+
+  &__interval
+    display inline-block
+
+    .last
+      border-right 1px solid color_border
+
+    &__title
+      display inline-block
+      margin 0 2px 0 8px
+
+    &__item
+      cursor pointer
+      display inline-block
+      border 1px solid color_border
+      border-right none
+      padding 5px
+      min-width 15px
+      text-align center
+      margin 2px 0 0 0
+
+    &__item:last-child
+      border-right 1px solid color_border
+
+    &__item.selected
+      color #fff
+      background-color color_gray_dark
+
+    &__item:hover
+      color #fff
+      background-color color_main_red_focus
+
+  &__table
+    width 100%
+    border-top 1px solid color_border
+    border-bottom 1px solid color_border
+    border-left 1px solid color_border
+
+    &__cell
+      vertical-align top
+      padding 0
+      font-size 12px
+      color color_gray_dark
+      height 24px
+      border-right 1px solid color_border
+
+    &__cell_time
+      cursor pointer
+      padding 4px 0 5px 8px
+
+    &__cell_time:hover, .over
+      color #000
+      background-color color_gray !important
+
+    &__head
+
+      &__th
+        background-color color_gray_lite
+        color color_main_ligth
+        border-right 1px solid color_border
+        vertical-align top
+        cursor pointer
+        text-align left
+        font-weight normal
+
+        &__today
+          color #000
+          background-color color_green_light
+
+      &__th:hover
+        color #fff
+        background-color color_bg_hover
+
+      &__weekday_label
+        display inline-block
+        font-size 15px
+        padding 11px 0 0 5px
+
+      &__day
+        float right
+        font-size 28px
+        padding 0 8px 0 5px
+
+
+      &__master
+        font-size 0
+        border-top 1px solid color_border
+        border-right 1px solid color_border
+        border-bottom 1px solid color_border
+
+      &__master:child-last
+        border-right none
+
+      &__full_name
+        display inline-block
+        width calc(100% - 28px)
+        font-size 12px
+        padding 5px 5px 5px 3px
+
+      &__print
+        display inline-block
+        font-size 12px
+        padding 5px 3px 5px 4px
+        border-left 1px solid color_border
+        background-color #fff
+
+      &__print:hover
+        cursor pointer
+        color #fff
+        background-color color_main_red_focus
+
+
+    &__week
+      display block
+      cursor pointer
+      background-color color_main_ligth
+      opacity .5
+      min-width 20px
+      height 100px
+
+    &__week:hover
+      background-color color_bg_hover
+      opacity 1
+
+      span
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+
+
+    &__group
+      width 100%
+      white-space normal
+      border none
+      border-top 1px solid color_border
+      background-color color_gray_lite
+      padding 0
+      font-size 15px
+      color #000
+      text-align left
+
+      &__name, &__count
+        display inline-block
+        padding 6px 8px
+
+      &__count
+        float right
+        border-left 1px solid color_border
+
+    &__time, &__deal
+      cursor pointer
+      padding 6px 8px
+      border-top 1px solid color_border
+
+    &__time
+      opacity .5
+      border-top 1px solid color_border
+
+    &__time:hover
+      opacity 1
+      color #fff
+      background-color color_bg_hover
+
+    &__time.timing_empty
+      border-top 1px solid color_border
+
+    &__deal:hover > .i-schedule__table__deal__minutes
+      color #fff
+      background-color color_main_red_focus
+
+    &__call_wrap
+      position relative
+      display table
+      width 100%
+
+    &__call_empty
+      background #fff
+
+    &__height
+      position absolute
+      overflow hidden
+      width 100%
+      display table-row
+      font-size 13px
+      border-bottom 1px solid color_border
+      margin 0
+      padding 0
+      z-index 0
+
+
+    &__timeout
+      position absolute
+      overflow hidden
+      display table-row
+      z-index 10
+      width calc(100% - 2px)
+      border 1px solid color_green
+      background-color rgba(255, 255, 255, .85)
+
+      &__title
+        text-align right
+        padding 0 5px 0 0
+        color color_green_dark
+
+      &__item
+        display inline-block
+
+      &__close
+        cursor pointer
+        font-size 16px
+        text-align center
+        padding 2px 0 0
+        width 22px
+        height 20px
+        float left
+        border-radius 1px
+
+      &__close:before
+        content "x"
+
+      &__close:hover
+        color #fff
+        background-color color_green_dark
+        border none
+
+
+    &__time_group
+      cursor help
+      position absolute
+      overflow hidden
+      display table-row
+      z-index 10
+      height 15px
+      width 15px
+
+    &__time_group__help
+      position absolute
+      border 1px solid #fff
+      height 25px
+      width 25px
+      z-index 10
+      transform rotate(45deg)
+      margin -14px
+      background-color color_lightseagreen
+
+    &__time_group__top, &__time_group__bottom, &__time_group__left, &__time_group__right
+      position absolute
+      display table-row
+      z-index 9
+
+    &__time_group__top
+      width 100%
+      border-top 2px solid color_lightseagreen
+      border-bottom 1px solid #fff
+
+    &__time_group__bottom
+      width 100%
+      border-bottom 2px solid color_lightseagreen
+      border-top 1px solid #fff
+
+    &__time_group__right
+      margin-left calc(100% - 3px)
+      border-right 2px solid color_lightseagreen
+      border-left 1px solid #fff
+
+    &__time_group__left
+      border-left 2px solid color_lightseagreen
+      border-right 1px solid #fff
+
+    &__empty
+      cursor pointer
+      position absolute
+      overflow hidden
+      width calc(100% - 2px)
+      display table-row
+      font-size 13px
+      border 1px solid #fff
+      border-top none
+      border-bottom 1px solid color_border
+      border-radius 3px
+      margin 0
+      padding 0
+      z-index 3
+
+      &__time
+        height 100%
+        padding 1px 7px 0 0
+        text-align right
+
+    &__empty:hover
+      background-color color_gray
+
+    &__deal_short
+      width calc(20% + 1px) !important
+
+    &__deal_details_icon
+      padding 5px 8px !important
+
+      .el-icon-view
+        margin: 0 !important
+        font-size 20px !important
+        text-align center
+
+      &__true
+        color #fff
+        background-color color_gray_dark
+
+    &__deal_details
+      position absolute
+      display inline-block
+      overflow hidden
+      width calc(80% - 2px)
+      margin-top -1px
+      margin-left calc(20% + 1px)
+      line-height 23px
+      background #fff
+      z-index 5
+      border-top 1px solid color_border
+      border-bottom 1px solid color_border
+      border-left 1px solid color_border
+
+      &__comment, &__debt, &__person
+        line-height 23px
+        min-height 23px
+        color #000
+        background-color #fffae3
+        padding 5px 5px 4px 5px
+
+      &__debt
+        color #fff
+        background color_red
+
+      &__person
+        display inline-block
+        font-size 0
+        min-height 24px
+        max-height 24px
+        background-color: #fff;
+        border 1px solid color_border
+        border-left none
+        border-top none
+        padding 1px 0 0
+
+
+        &__full_name, &__age
+          display inline-block
+          font-size 12px
+          padding 1px 6px 0
+
+        &__age
+          border-left 1px solid color_border
+
+    &__deal
+      position absolute
+      overflow hidden
+      width calc(100% - 2px)
+      display table-row
+      font-size 13px
+      border 1px solid #fff
+      border-top none
+      box-shadow inset 0 1px #fff
+      margin 0
+      padding 0
+      z-index 5
+
+      &__tooltip
+        width 100%
+        height 28px
+        color #fff
+        background none
+        font-size 14px
+        border none
+        border-radius 0
+        margin 0 !important
+        padding 0
+
+      &__drag
+        width 100%
+        min-height 26px
+
+      &__body
+        display table-cell
+        width 100%
+        padding 4px 6px
+
+      &__time
+        padding 0 0 3px
+
+      &__person
+        height 15px
+        word-break break-all
+        overflow hidden
+
+      &__persons_count, &__arrear
+        display table-cell
+        text-align left
+        box-shadow inset 0 1px #fff
+        padding 3px 6px 0
+        border-left 1px solid #fff
+
+      &__arrear
+        border-right 1px solid color_border
+        padding 6px 8px 6px 0
+
+      &__minutes
+        display inline-block
+        float right
+        padding 7px 8px
+        text-align center
+
+//&__deal:hover > .i-schedule__table__deal__time
+//border-bottom 1px solid #fff
+//box-shadow inset 0 0 5px 1px #fff
+
+.pravka_0
+  border-left 1px solid color_border
+  color #000
+  background-color #fff
+
+.pravka_1
+  color #fff
+  background-color #e95555
+
+.pravka_2
+  color #fff
+  background-color #fa8b25
+
+.pravka_3
+  color #000
+  background-color #ffeb00
+
+.pravka_4, .pravka_5, .pravka_6, .pravka_7, .pravka_8, .pravka_9, .pravka_10
+  color #000
+  background-color #5cff00

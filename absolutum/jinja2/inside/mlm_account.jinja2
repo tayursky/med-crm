@@ -1,0 +1,197 @@
+{% if not template_slice %}
+  {% extends 'inside/index.jinja2' %}
+{% endif %}
+
+{% block content %}
+
+  {% if agent %}
+    <!--h2 class="mlm_account_title">{{ agent.person.cache.full_name }}</h2-->
+
+    {% if not agent.person.get_email() %}
+      <div class="recommend">
+        Для восстановления пароля используется e-mail, рекомендуем указать e-mail.
+      </div>
+    {% endif %}
+    {% if not agent.bank_account %}
+      <div class="recommend">
+        Не указана ваша банковская карта, мы не знаем куда переводить ваши деньги.
+      </div>
+    {% endif %}
+
+    {% if not form %}
+      <div class="mlm_account__balance">
+        <div class="code">Ваш промокод: <strong>{{ agent.code }}</strong></div>
+        <div class="balance">Доступные средства: <strong>{{ agent.cache.invite_balance }}</strong> руб.</div>
+        <div class="clearfix"></div>
+      </div>
+    {% endif %}
+
+    <div class="mlm_account">
+      <h3>Добро пожаловать в партнерскую программу «Правка»!</h3>
+      <ul>
+        <li>Мы создали эту систему ради того что бы дать Вам возможность дополнительного дохода в социально полезном
+          деле! Благодаря Вам большее число людей смогут пройти уникальную процедуру «Правка Атланта».
+          Благодаря Вашим рекомендациям люди получат хорошую скидку и обретут фундаментальное здоровье!
+        </li>
+      </ul>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-element col-sm-12 col-md-12 col-lg-6">
+            {% if message %}
+              <div class="message">{{ message }}</div>
+            {% endif %}
+
+            {% if form %}
+              <div id="info_email_text" class="info_text">
+                При смене промокода, старый промокод перестает работать.
+              </div>
+              <form class="mlm_account__form" method="post" action="{{ url('partner') }}">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                {{ form.as_p() }}
+                <div class="mlm_account__footer">
+                  <a href="{{ url('partner') }}" class="button"><i class="fa fa-times fa-lg"></i> Отмена</a>
+                  <input type="submit" class="button" value="Сохранить"/>
+                </div>
+              </form>
+            {% elif form_password %}
+              <form class="mlm_account__form" method="post" action="{{ url('partner') }}">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                {{ form_password.as_p() }}
+                <div class="mlm_account__footer">
+                  <a href="{{ url('partner') }}" class="button"><i class="fa fa-times fa-lg"></i> Отмена</a>
+                  <input type="submit" class="button" value="Сохранить"/>
+                </div>
+              </form>
+            {% else %}
+
+              <h3>Ваши данные</h3>
+              <div class="section">
+                Промокод: {{ agent.code }}
+              </div>
+              <div class="section">
+                E-mail: {{ agent.person.get_email() }}
+                <div id="info_email_text" class="info_text hidden">
+                  Именно на этот email мы будем оповещать вас о пополнении средств.
+                </div>
+              </div>
+              <div class="section">
+                <span style="vertical-align: top">Банковская карта:</span>
+                <div class="mlm_account__pre">{{ agent.bank_account or '' }}</div>
+              </div>
+              <div class="section">
+                <span style="vertical-align: top">Имя на карте:</span>
+                <div class="mlm_account__pre">{{ agent.bank_account_fio or '' }}</div>
+              </div>
+              <a href="?password=true" class="button"><i class="fa fa-edit fa-lg"></i> Поменять пароль</a>
+              <a href="?edit=true" class="button"><i class="fa fa-edit fa-lg"></i> Изменить данные</a>
+            {% endif %}
+          </div>
+
+          <div class="col-element col-sm-12 col-md-12 col-lg-6">
+            <h3>Сводка по доходам</h3>
+            <table class="mlm_account__invites">
+              <thead>
+              <tr>
+                <td class="text-right">Приглашений</td>
+                <td>Всего начислено</td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="text-right">{{ invite_set.level_1.count }}</td>
+                <td>{{ invite_set.sum }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="text-right sum">Выведено</td>
+                <td class="sum">{{ invite_set.payments }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="text-right sum">Доступно средств</td>
+                <td class="sum">{{ agent.cache.invite_balance }}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <h3>Как вам заработать:</h3>
+      <ul>
+        <li>Скопируйте ссылку на сайт
+          <a href="https://pravkaatlanta.ru/?a={{ agent.code }}" target="_blank">
+            https://pravkaatlanta.ru/?a={{ agent.code }}</a>,
+          содержащую ваш промокод, и поделитесь ей с хорошими людьми! <br/>
+          <div class="promocode">
+            <div class="promocode__url" id="invite_url">https://pravkaatlanta.ru/?a={{ agent.code }}</div>
+            <div class="promocode__copy" onclick="copyToClipboard('#invite_url')">Скопировать</div>
+          </div>
+        </li>
+        <li>Отправьте эту ссылку по электронной почте, напишите сообщение друзьям или оставьте комментарий в социальных
+          сетях.
+        </li>
+        <li>Также вы можете озвучить устно сам промокод: <strong>{{ agent.code }}</strong></li>
+        <li>Помните, что мы за любое легальное распространение промокода, но категорически против спама и незаконной
+          рекламы!
+        </li>
+      </ul>
+
+      <h3>Как работает промокод:</h3>
+      <ul>
+        <li>Когда клиенты используют ваш промокод, они получат {{ agent.discount | int }}% скидку, а вы получаете
+          вознаграждение {{ agent.level_1 | int }}% от суммы потраченной ими на наши услуги.
+        </li>
+        <li>Наша система распознаёт и запоминает человека пришедшего по вашей ссылке.</li>
+        <li>Система сама оповещает клиента о {{ agent.discount | int }}% скидке, при заполнении им заявки на сайте.</li>
+        <li>Если, по каким-то причинам, браузер не запомнил ссылку, клиент может написать код вручную, заполняя форму
+          заявки на сайте.
+        </li>
+        <li>Клиент может озвучить промокод устно оператору по телефону или сообщить код администратору в медицинского
+          центра во время своего визита.
+        </li>
+        <li>Вся история взаимодействия с клиентом фиксируется и учитывается в нашей автоматизированной системе.</li>
+      </ul>
+
+      <h3>Мы гарантируем ежемесячные платежи:</h3>
+      <ul>
+        <li>После того как клиент оплатил наши услуги, на ваш баланс автоматически зачисляется процент партнёрского
+          вознаграждения.
+        </li>
+        <li>В конце каждого месяца мы автоматически переводим все заработанные вами деньги на указанную вами банковскую
+          карту.
+        </li>
+        <li>Мы не передаём ваши данные третьим лицам, но помните, что вы самостоятельно несете ответственность перед
+          государством и налоговой службой.
+        </li>
+      </ul>
+
+    </div>
+
+  {% endif %}
+
+
+
+  <div class="footer">
+    <a class="partner_offer" href="/partner/offer/">Договор оферты</a>
+  </div>
+
+  <script>
+    var params = window.location.search.slice(1);
+
+    function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+
+    $('.info_icon').click(function (event) {
+      var text_id = this.id + '_text';
+      $('#' + text_id).toggleClass('hidden');
+    });
+  </script>
+
+{% endblock content %}

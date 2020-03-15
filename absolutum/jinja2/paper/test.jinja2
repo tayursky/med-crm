@@ -1,0 +1,36 @@
+{% extends 'paper/base.jinja2' %}
+
+{#{% block css %}#}
+{#  <style type="text/css">#}
+{#    {{ resource_as_string("./static/paper/test.css")|safe }}#}
+{#  </style>#}
+{#{% endblock %}#}
+
+
+{% block content %}
+  <h1>{{ title }}</h1>
+
+  <p><b>Дата: {{ deal.start_datetime.strftime('%d.%m.%Y') }}</b></p>
+
+  <p><b>Клиент: {{ person.cache.full_name }}</b></p>
+
+  <table class="org_balance">
+    <thead>
+    <tr></tr>
+    </thead>
+
+    <tbody>
+    {% for payment in data['items'] %}
+      <tr>
+        1
+      </tr>
+    {% else %}
+      <tr>
+        2
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+
+{% endblock %}

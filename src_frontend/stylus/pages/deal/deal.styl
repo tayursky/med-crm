@@ -1,0 +1,268 @@
+.deal_arrear
+  display inline-block
+  color #fff
+  background color_red
+  padding 6px 10px
+
+.deal_closed
+  color #000 !important
+  background color_gray_middle !important
+
+  *
+    color #000 !important
+    background color_gray_middle !important
+
+.deal_closed:hover
+  color #fff !important
+  background color_gray_dark !important
+
+  *
+    color #fff !important
+    background color_gray_dark !important
+
+
+.deal-content
+  padding 0
+
+  &__title
+    display inline-block
+    font-size 20px
+    padding 13px 10px 0 0
+
+  .i-month, .i-schedule, .i-day
+    background-color #fff
+    padding 10px
+    margin 0
+    min-width 650px
+    max-width 980px
+
+  &__top
+    font-size 0
+
+    &__city_name
+      display inline-block
+      font-size 24px
+      padding 0 0 0 15px
+
+    &__service_select
+      display inline-block
+
+      .el-select
+        vertical-align top
+        display inline-block
+        width 300px
+
+        .el-input__inner
+          display inline-block
+          vertical-align top
+          height 30px
+          line-height 30px
+          margin 0
+          padding 0 10px
+          border 1px solid color_border
+          border-radius 3px 0 0 3px
+
+      .el-button
+        display: inline-block;
+        vertical-align: top;
+        padding: 5px 15px 4px;
+        border 1px solid color_border
+        border-left none
+        border-radius 0 3px 3px 0
+
+    &__title
+      display inline-block
+      font-size 22px
+      padding 3px 15px 0
+
+
+.deal-form
+
+  .el-dialog
+    //width calc(100% - 250px)
+    //margin 0 0 0 250px !important
+    width 100%
+    margin 0 !important
+    max-width unset
+    min-width 600px
+
+  &__margin_left
+    text-align right
+
+    .el-input
+      float right
+      width calc(100% - 5px) !important
+
+  &__row
+    background-color color_gray_lite
+
+  &__col:last-child
+    border-left 1px solid color_border
+
+  &__col
+    background-color #fff
+
+  &__history
+
+    &__title
+      background-color color_gray
+      border-bottom 1px solid color_border
+
+      &__txt
+        display inline-block
+        padding 8px 10px
+        font-weight bold
+
+      &__add
+        background-color color_gray
+        float right
+        border none
+        border-radius 0
+
+        i
+          padding 3px 2px 2px
+
+    &__item
+      padding 0
+
+      .title
+        .text
+          display inline-block
+          font-weight bold
+          padding 4px 10px
+
+        .time
+          float right
+          font-size 13px
+          padding 5px 8px 0
+
+      .status_text
+        padding 0 10px 4px
+        font-weight bold
+
+      .value
+        font-weight normal
+        padding 0 10px 5px
+        border-bottom 1px solid color_border
+
+  &__history_user
+    float right
+    padding 5px
+
+  &__stages
+    padding 5px 8px !important
+    border-bottom 1px solid color_border
+
+    &__label
+      font-size 15px
+      padding 0 0 3px
+      font-weight bold
+
+    &__item
+      cursor pointer
+      display inline-block
+      height 20px
+
+    &__item:hover
+      opacity 1
+
+  &__persons
+    &__title
+      border-bottom 1px solid color_border
+      background-color color_gray
+      padding 0
+      font-weight bold
+
+      &__txt
+        padding 10px 10px 0 12px
+
+      &__btn
+        float right
+        padding 8px 10px 6px 11px !important
+
+    &__btn_group
+      margin 0
+      padding 0
+
+    &__btn
+      background none
+      border-radius 0
+      border-top none
+      border-bottom none
+      padding 8px 5px 6px
+      font-size 22px
+      color color_gray_dark
+
+    &__btn:first-child
+      border-left none
+
+    &__btn_act
+      color color_lightseagreen
+
+    &__full_name
+      float right
+      width calc(100% - 73px)
+
+    .formset__item
+      padding 0 5px 0 0
+
+    &__search
+
+      &__row
+        cursor pointer
+        width 100%
+        display inline-block
+        border-top 1px dashed color_border
+
+      &__row:hover
+        background-color color_gray
+
+      &__col
+        padding 2px 5px
+
+      &__full_name
+        padding 2px 0 2px 78px
+
+.deal-form-inner
+
+  .el-dialog
+    margin 100px auto 0 !important
+
+.deal-dnd
+  &__wrap
+    float right
+    right 20px
+    white-space nowrap
+    top 70px
+    position fixed
+    border 1px solid color_border
+    z-index 100
+
+  &__page-btn
+    display inline-block
+    min-height 30px
+    min-width 30px
+    background red
+    cursor pointer
+    color #fff
+
+    &__id
+      padding 6px 12px
+      font-size 16px
+
+    &__cancel
+      float right
+      border-radius 0
+      min-height 30px
+      border none
+      padding 3px 6px
+
+
+  &__form-btn
+    padding 2px 3px
+    width 100%
+    border-radius 2px
+    min-height 26px
+    margin 3px 3px 3px 0
+    border 1px solid color_border
+    border-left none

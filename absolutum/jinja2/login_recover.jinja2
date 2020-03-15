@@ -1,0 +1,36 @@
+{% if not template_slice %}
+  {% extends 'inside/index.jinja2' %}
+{% endif %}
+
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/login.css"/>
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <title>CRM: Правка</title>
+  </head>
+
+  <div class="container login-container">
+    <div class="login-container__block">
+      <div class="login-container__header">{{ title }}</div>
+      {% if message %}
+        <div class="login-container__message">{{ message }}
+          {% if path_login %}
+            <a href="{{ path_login }}">Страница авторизации</a>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if form %}
+        <form class="login-container__form" method="post" action="{{ path }}">
+          <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+          {{ form.as_p() }}
+          <div class="login-container__footer">
+            <input type="submit" value="Далее"/>
+          </div>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+
+
+{% endblock content %}

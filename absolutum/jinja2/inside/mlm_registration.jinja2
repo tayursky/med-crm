@@ -1,0 +1,44 @@
+{% if not template_slice %}
+  {% extends 'inside/index.jinja2' %}
+{% endif %}
+
+{% block content %}
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/login.css"/>
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <title>CRM: Правка</title>
+  </head>
+
+  <div class="container login-container">
+    <div class="login-container__block registration">
+      <div class="login-container__header">Регистрация в партнерской программе</div>
+      {% if answer %}
+        <div class="answer">
+          {{ answer }}
+        </div>
+      {% else %}
+        <form class="login-container__form" method="post" action="{{ url('partner_registration') }}">
+          <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+          {{ form.as_p() }}
+          <div class="login-container__footer">
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+          </div>
+        </form>
+      {% endif %}
+    </div>
+
+  </div>
+
+
+  <script>
+    var params = window.location.search.slice(1);
+
+    $('.info_icon').click(function (event) {
+      var text_id = this.id + '_text';
+      $('#' + text_id).toggleClass('hidden');
+    });
+  </script>
+
+{% endblock content %}

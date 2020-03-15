@@ -1,0 +1,535 @@
+* {
+    font-size: 13px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen {
+    body {
+        border: 1px solid #f00;
+    }
+}
+
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 5mm 5mm;
+    }
+}
+
+body {
+    font-family: Arial;
+    width: 200mm;
+    vertical-align: top;
+    margin: 0 auto;
+}
+
+.content {
+    margin: 15px 20px;
+}
+
+h1 {
+    font-size: 18px;
+    text-align: center;
+    padding: 0 0 5px;
+}
+
+h2 {
+    font-size: 16px;
+    padding: 0 0 5px;
+}
+
+h3 {
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+i {
+    white-space: nowrap;
+    font-style: normal;
+}
+
+.name {
+    font-size: 11px;
+    text-align: right;
+}
+
+div.lines,
+div.lines_1,
+div.lines_2,
+div.lines_3,
+div.lines_4,
+div.lines_5,
+div.lines_1.desc,
+div.lines_2.desc,
+div.lines_3.desc,
+div.lines_4.desc,
+div.lines_5.desc {
+    line-height: 22px;
+    width: 190mm;
+    position: relative;
+    overflow: hidden;
+}
+
+div.lines *,
+div.lines_1 *,
+div.lines_2 *,
+div.lines_3 *,
+div.lines_4 *,
+div.lines_5 *,
+div.lines_1.desc *,
+div.lines_2.desc *,
+div.lines_3.desc *,
+div.lines_4.desc *,
+div.lines_5.desc * {
+    position: relative;
+    z-index: 2;
+}
+
+div.lines div.lines_bg,
+div.lines_1 div.lines_bg,
+div.lines_2 div.lines_bg,
+div.lines_3 div.lines_bg,
+div.lines_4 div.lines_bg,
+div.lines_5 div.lines_bg,
+div.lines_1.desc div.lines_bg,
+div.lines_2.desc div.lines_bg,
+div.lines_3.desc div.lines_bg,
+div.lines_4.desc div.lines_bg,
+div.lines_5.desc div.lines_bg {
+    font-family: Arial;
+    width: 190mm;
+    position: absolute;
+    height: 500px;
+    top: 0;
+    z-index: 0;
+}
+
+div.lines div.lines_bg div.bg__item,
+div.lines_1 div.lines_bg div.bg__item,
+div.lines_2 div.lines_bg div.bg__item,
+div.lines_3 div.lines_bg div.bg__item,
+div.lines_4 div.lines_bg div.bg__item,
+div.lines_5 div.lines_bg div.bg__item,
+div.lines_1.desc div.lines_bg div.bg__item,
+div.lines_2.desc div.lines_bg div.bg__item,
+div.lines_3.desc div.lines_bg div.bg__item,
+div.lines_4.desc div.lines_bg div.bg__item,
+div.lines_5.desc div.lines_bg div.bg__item {
+    border-bottom: 0.5px solid #000;
+    height: 21px;
+}
+
+div.lines_2 {
+    height: 44px;
+}
+
+div.lines_3 {
+    height: 66px;
+}
+
+div.lines_4 {
+    height: 88px;
+}
+
+div.lines_5 {
+    height: 110px;
+}
+
+div.lines_2.desc {
+    height: 51px;
+}
+
+div.lines_3.desc {
+    height: 73px;
+}
+
+div.lines_4.desc {
+    height: 95px;
+}
+
+div.lines_5.desc {
+    height: 117px;
+}
+
+div.desc {
+    min-height: 35.2px;
+}
+
+div.desc p {
+    margin-top: -5px;
+}
+
+div.desc p::first-letter {
+    line-height: 36px;
+}
+
+div.desc div.lines_bg div.bg__item:nth-of-type(2) {
+    height: 27px;
+}
+
+div.desc div.description {
+    width: 190mm;
+    position: absolute;
+    margin-top: 15px;
+    font-size: 11px;
+    text-align: center;
+    z-index: 3;
+}
+
+div.description,
+div.description__after {
+    width: 190mm;
+    position: absolute;
+    margin-top: 15px;
+    font-size: 11px;
+    text-align: center;
+    z-index: 3;
+}
+
+div.description__after {
+    margin-top: -3px;
+}
+
+div.sex {
+    display: flex;
+    align-items: flex-end;
+    float: right;
+    background-color: #fff;
+    padding: 0 0 0 5px;
+}
+
+div.sex i.box {
+    font-family: Arial;
+    display: inline-block;
+    border: 0.5px solid #000;
+    padding: 0 4px 2px;
+    margin: 0 10px 3px 5px;
+    width: 13px;
+    min-width: 13px;
+    height: 15px;
+    min-height: 15px;
+    text-align: center;
+    background-color: #fff;
+}
+
+div.sex i.box:last-child {
+    margin-right: 0;
+}
+
+i.box_small {
+    display: inline-block;
+    border: 0.5px solid #000;
+    width: 13px;
+    min-width: 13px;
+    height: 13px;
+    min-height: 13px;
+    margin: 0 5px 5px;
+    vertical-align: bottom;
+}
+
+.snils {
+    background-color: #fff;
+    border-spacing: 0;
+    margin: 2px 0;
+}
+
+.snils td.title {
+    font-family: Arial;
+    line-height: 10px;
+    text-align: center;
+    padding: 2px 10px 0;
+    width: 70px;
+    height: auto;
+    border: none;
+    border-right: 0.5px solid #000;
+}
+
+.snils td.title span.description {
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.snils td {
+    font-family: Arial;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: 0.5px solid #000;
+    border-left: none;
+}
+
+.date-line {
+    font-family: Arial;
+    white-space: normal;
+    display: inline-block;
+    height: 20px;
+    line-height: 22px;
+    border-bottom: 3px solid #fff;
+}
+
+.date-line .text {
+    font-family: Arial;
+}
+
+.date-line .day,
+.date-line .month,
+.date-line .year {
+    height: 21px;
+    width: 25px;
+    display: inline-block;
+    border-bottom: 0.5px solid #000;
+    vertical-align: top;
+}
+
+.date-line .day {
+    text-align: center;
+}
+
+.date-line .month {
+    text-align: center;
+    width: 90px;
+}
+
+div.lines_1.half,
+div.half {
+    width: 45%;
+    float: left;
+}
+
+div.lines_1.half_m_right {
+    width: 45%;
+    text-align: center;
+    float: right;
+}
+
+table.wide {
+    width: 100%;
+    border-spacing: 0;
+    margin: 0 0 15px;
+}
+
+table.wide td {
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-left: none;
+    padding: 2px 7px;
+}
+
+table.wide td:first-child {
+    border-left: 1px solid;
+}
+
+table.wide tr:first-child td {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+table.wide thead tr:first-child td {
+    font-weight: bold;
+    border-bottom: none;
+}
+
+table.extract {
+    margin-bottom: 20px;
+}
+
+table.extract td {
+    vertical-align: top;
+    padding: 0 10px 0 0;
+}
+
+table.extract td:first-child {
+    text-align: right;
+}
+
+div.p_enquiry {
+    margin: 25px 0;
+    padding: 0;
+}
+
+.center,
+i.center,
+div.center {
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+}
+
+.left,
+div.left {
+    text-align: left;
+    float: left;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.underline {
+    border-bottom: 0.5px solid #000;
+    padding-bottom: 2px;
+}
+
+.small {
+    font-size: 13px;
+    line-height: 14px;
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.white {
+    border-bottom: 5px solid #fff;
+    padding: 0 5px 0 0;
+    background-color: #fff;
+}
+
+.clearfix {
+    float: none;
+    margin: auto;
+}
+
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.cut_line {
+    margin: 10px 0;
+    border-bottom: 1px #000 dashed;
+}
+
+tr.border-none {
+    border: none;
+}
+
+tr.border-none td,
+tr.border-none td:first-child {
+    border: none;
+}
+
+tr.border-none td.dashed {
+    border-bottom: 1px #000 dashed;
+}
+
+@page {
+    size: A4 landscape;
+    margin: 5mm 0;
+}
+
+.apartment_types {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.org_balance {
+    width: 285mm;
+    border-spacing: 0;
+    padding: 2px;
+}
+
+.org_balance thead td {
+    font-size: 10px;
+    max-width: 50px;
+    word-wrap: break-word;
+    text-align: center;
+    font-weight: bold;
+}
+
+.org_balance thead tr:last-child td {
+    border-bottom: none;
+}
+
+.org_balance .head {
+    font-weight: bold;
+    background-color: #eee;
+    text-align: center;
+}
+
+.org_balance .title td {
+    font-weight: bold;
+    font-size: 11px;
+    padding: 5px;
+    background-color: #cecece;
+}
+
+.org_balance td {
+    font-size: 10px;
+    padding: 3px 3px 4px;
+    border: 1px solid #000;
+    border-top: none;
+    border-left: none;
+}
+
+.org_balance b {
+    font-size: 10px;
+}
+
+.org_balance td:first-child {
+    max-width: 90px;
+    border-left: 1px solid #000;
+}
+
+.org_balance tr:first-child td {
+    border-top: 1px solid #000;
+}
+
+.org_balance td.empty_r {
+    border: 0;
+    border-right: 1px solid #000;
+}
+
+.org_balance .total,
+.org_balance .total_2 {
+    background-color: #d3d3d3;
+    font-weight: bold;
+}
+
+.org_balance .total_2 {
+    background-color: #b9b9b9;
+    text-align: center;
+}
+
+.org_balance .transform_90 {
+    transform: rotate(-90deg);
+    margin: 20%;
+}
+
+.org_balance .border-top-none,
+.org_balance tr:first-child td.border-top-none {
+    border-top: 0;
+}
+
+.org_balance .border-bottom {
+    border-bottom: 2px solid;
+}
+
+.org_balance .tr-border-top-none td,
+.org_balance tr.tr-border-top-none:first-child td {
+    border-top: none;
+}

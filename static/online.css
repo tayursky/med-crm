@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial;
+    background-color: #e8eced;
+}
+
+.online-container, .online-container__done {
+    margin: 50px auto 0;
+    width: 500px;
+    border: 1px solid #cacaca;
+    box-shadow: 5px 5px 10px #ccc;
+}
+
+.online-container__discount {
+    font-size: 28px;
+    text-align: center;
+    padding: 10px 0px;
+    color: #28a747;
+    font-weight: bold;
+    margin: 0 10px 5px;
+}
+
+.online-container__header {
+    background-color: #fff;
+    border-bottom: 3px solid #971c0a;
+    padding: 15px 15px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.online-container__done {
+    width: 650px;
+    text-align: center;
+}
+
+.online-container__ok {
+    background: #5cc777;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+}
+
+.online-container__ok__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.online-container__form {
+    background-color: #fff;
+    padding-top: 10px;
+}
+
+.online-container__form .errorlist {
+    color: #c00200;
+    font-size: 15px;
+    padding: 0;
+}
+
+.online-container__form .errorlist li {
+    list-style: none;
+    margin: 5px 38px 0;
+    text-align: right;
+}
+
+.online-container p {
+    padding: 5px 16px;
+}
+
+.online-container p label {
+    display: inline-block;
+    width: 160px;
+    text-align: right;
+    padding: 3px 10px 0 0;
+    margin: 0;
+}
+
+.online-container p input, .online-container p input[required] {
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 5px 10px;
+    width: 250px;
+}
+
+/*.online-container p input:not([required]) {*/
+/*    padding: 0;*/
+/*}*/
+
+.online-container p input[required] {
+    border: 1px solid #f7a60c;
+    /*padding: 4px 6px;*/
+    /*width: 275px;*/
+}
+
+.online-container p select {
+    padding: 5px;
+    width: 272px;
+}
+
+.online-container__footer {
+    padding: 10px 38px 25px;
+    text-align: right;
+}
+
+.online-container__footer input[type=submit] {
+    width: unset;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    background: #19a3c7;
+    border: none;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 10px 0 0;
+    padding: 10px 20px 10px 15px;
+}

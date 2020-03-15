@@ -1,0 +1,19 @@
+{% if not template_slice %}
+  {% extends 'inside/index.jinja2' %}
+{% endif %}
+
+{% block content %}
+  <h2>{{ title_h1 }}</h2>
+
+  {% if object %}
+    <div class="content">
+      <form class="mlm__form" method="post" action="{{ url('partner_invite', kwargs={'token':token}) }}">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        {{ form.as_p() }}
+        <div class="mlm__form__footer"><input type="submit" value="Отправить"/></div>
+      </form>
+
+    </div>
+  {% endif %}
+
+{% endblock content %}

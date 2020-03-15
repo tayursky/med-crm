@@ -1,0 +1,23 @@
+{% if not template_slice %}
+  {% extends 'inside/index.jinja2' %}
+{% endif %}
+
+{% block content %}
+
+  <h2 class="mlm_account_title">Как пользоваться партнеркой</h2>
+
+  <div class="mlm_account">
+    <p class="help_p">Скидка - та сумма, которую клиент сэкономит, обратившись через промокод партнера.</p>
+
+    <p class="help_p">Бонус - Бонус - деньги, которые начислятся партнеру.</p>
+
+    <p class="help_p">Промокод - кодовое слово посредством которого распространяется скидка.</p>
+
+    <p class="help_p">Реквизиты - на эти реквизиты будут переводиться деньги с бонусов.</p>
+  </div>
+
+  <div class="footer">
+    <a class="partner_offer" href="/partner/offer/">Договор оферты</a>
+  </div>
+
+{% endblock content %}

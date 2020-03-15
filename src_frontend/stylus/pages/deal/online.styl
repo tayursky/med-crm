@@ -1,0 +1,112 @@
+.deal-online
+  max-width 800px
+
+  &__chosen_day
+    width 145px !important
+    font-size 16px
+    margin 0 5px
+
+    .el-input__inner
+      border-color color_border
+      margin 1px 0
+      height 30px
+
+  .el-button
+    vertical-align top
+    font-size 14px !important
+    padding 8px 12px
+
+    i
+      margin-right 10px
+
+    .el-icon-d-arrow-right
+      margin 0 0 0 10px
+
+  &__time
+    margin 10px auto
+    font-size 0
+    text-align center
+
+    &__help_text
+      padding 20px 30px 0
+      font-size 15px
+      text-align right
+      font-weight bold
+
+    &__empty:hover, &__empty.hover
+      color #fff
+      background-color color_bg_hover
+
+    &__empty, &__deal
+      cursor pointer
+      display inline-block
+      width 100px
+      font-size 14px
+      text-align center
+      border 1px solid color_border
+      margin 1px 1px 0 0
+      padding 6px 10px
+
+    &__deal
+      color color_gray_dark
+
+  .has-errors
+    background-color #fff3f3
+
+  .form-errors__item
+    text-align right
+    padding 5px 10px
+
+  &__form-block
+    margin 0 30px
+
+    //&__errors
+
+    .help_text
+      display inline-block
+      padding 8px 0 0 10px
+
+    .required_field:before
+      content "*"
+      color color_red
+      font-size 25px
+      position absolute
+      margin-left -15px
+
+    .formset
+      margin 10px 0 0
+
+      &__person_title
+        border 1px solid color_border
+        background-color color_gray
+        padding 0
+
+        &__txt
+          display inline-block
+          padding 7px 10px 7px
+
+      &__item
+        padding 0
+
+        &__row
+          border-bottom 1px solid color_border
+          padding 0 0 10px
+
+        &__add
+          border-radius 0
+          background none
+          border none
+          border-left 1px solid color_border
+          float right
+
+        &__delete
+          margin 5px 0 0
+          float right
+
+    &__footer
+      padding 10px 0
+
+
+.online-container
+  &__header
+    background #19a3c7

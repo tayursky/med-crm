@@ -1,0 +1,160 @@
+.working_calendar
+
+  &__empty
+    padding 20px
+    text-align center
+    font-size 20px
+
+  &__annotate
+    text-align center
+    margin 20px 0 10px
+
+    .workdays, .weekends, .holidays, .pre_holidays
+      display inline-block
+      padding 4px 8px
+      margin 0 5px
+
+    .workdays
+      border 1px solid color_gray_dark
+
+    .weekends
+      background-color color_main_red_lite
+
+    .holidays
+      color #fff
+      background-color color_red
+
+    .pre_holidays
+      background-color color_green_light
+
+  &__months
+    text-align center
+
+  &__month
+    vertical-align top
+    display inline-block
+    border-spacing 2px
+    border-collapse separate
+    padding 20px 25px
+
+    &__label
+      font-size 18px
+
+    &__annotate
+      padding 5px 0
+      font-weight normal
+      border-bottom 1px solid #cacaca
+      text-align right
+
+  &__day
+    font-size 15px
+    padding 4px 6px
+    text-align center
+
+  &__day.weekend
+    background-color color_main_red_lite
+
+  &__day.holiday
+      color #fff
+      background-color color_red
+
+  &__day.pre_holiday
+    background-color color_green_light
+
+
+  &__table
+    width 100%
+
+    thead
+      text-align left
+
+      th
+        font-weight normal
+        padding 10px
+        border-bottom 1px solid color_border
+
+    &__td:first-child
+      border-left 1px solid color_border
+
+    &__week
+      display block
+      cursor pointer
+      opacity .75
+      min-width 20px
+      height 110px
+      text-align center
+      background-color color_gray_lite
+      border-right 1px solid color_border
+      border-bottom 1px solid color_border
+
+      i
+        margin 45px 5px 0
+        font-size 18px
+
+    &__week:hover
+      color #fff
+      background-color color_bg_hover
+      opacity 1
+
+    &__td:hover
+      background-color color_gray_lite
+
+    &__td.next, &__td.prev
+      background color_gray_lite
+
+    &__td.today
+      background color_green_light
+
+    &__td
+      width 14.285%
+      border-bottom 1px solid color_border
+      border-right 1px solid color_border
+      vertical-align top
+      height 110px
+      min-height 110px
+
+      .month-item
+        float left
+        width 100%
+
+      .month-day, .month-day-add
+        cursor pointer
+        padding 8px 12px
+        text-align right
+        font-size 16px
+        font-weight bold
+        color color_main_gray
+
+        &__day
+          padding-left 10px
+
+        &__other
+          opacity .5
+
+      .month-day-add
+        text-align right
+        border none
+        border-radius 0
+
+        i
+          color color_gray_dark
+          padding-right 10px
+
+      .month-day-add:hover
+        i
+          color #fff
+
+
+      .month-day.prev, .month-day.next
+        color #c0c4cc
+
+      .month-day:hover, .month-day-add:hover, .month-day.prev:hover, .month-day.next:hover
+        color #fff
+        background-color color_bg_hover
+
+      .month-deals-count
+        display inline-block
+        padding: 5px 10px
+
+
+

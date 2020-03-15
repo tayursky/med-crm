@@ -1,0 +1,158 @@
+.company-timetable
+
+  .model_filter
+    display inline-block
+    margin 5px 0 0
+    width auto
+
+  &__head
+    width 100%
+    float left
+    margin 0
+    padding 0
+
+  .i-month__header
+    padding-top 5px
+
+  &__time
+    display inline
+    font-size 0
+
+    .el-date-editor.el-input
+      width 95px
+      vertical-align top
+
+      .el-input__inner
+        border-color color_border
+        height 32px
+        padding 0 28px
+        margin 0
+        vertical-align top
+
+      .el-input__prefix
+        left 3px
+
+      .el-input__icon
+        top -1px
+        position absolute
+
+    .el-date-editor.el-input:first-child .el-input__inner
+      border-right none !important
+      border-radius 2px 0 0 2px
+
+    .el-date-editor.el-input:last-child .el-input__inner
+      border-radius 0 2px 2px 0
+
+  &__table
+    width auto
+    margin-top 10px
+    border-collapse collapse
+    border-spacing 0
+    border-top 1px solid color_border
+    background-color #fff
+
+  &__thead
+    &__th, &__user
+      cursor default
+      user-select none
+      font-weight normal
+      padding 5px 0
+      min-width 28px
+      text-align center
+      border-right 1px solid color_border
+      border-bottom 1px solid color_border
+
+    &__user
+      border-left 1px solid color_border
+
+  &__tbody
+    &__user
+      cursor default
+      white-space nowrap
+      text-align right
+      padding 5px 8px
+      border-right 1px solid color_border
+      border-bottom 1px solid color_border
+      border-left 1px solid color_border
+
+    &__tr:hover
+      background-color color_bg_lite_hover
+
+    &__day
+      vertical-align top
+      text-align center
+      border-right 1px solid color_border
+      border-bottom 1px solid color_border
+
+    &__day:hover, &__user:hover
+      cursor default
+
+    &__day_focus
+      background-color color_bg_lite_hover
+
+    &__shift
+      cursor default
+      min-height 22px
+      padding-top 5px
+      text-align center
+
+
+  .time_groups
+    border 1px solid color_border
+    border-top none
+
+    &__item
+      cursor pointer
+      border 1px solid color_border
+      border-top none
+
+    &__item:hover
+      background-color color_bg_lite_hover
+
+    &__hr
+      border-top 1px solid color_border
+      border-bottom 1px solid color_border
+      height 10px
+
+    &__title
+      text-align right
+      padding 5px 10px
+      border-right 1px solid color_border
+
+    &__day
+      cursor pointer
+      text-align center
+      border-right 1px solid color_border
+      padding 5px
+
+      &__group
+        background color_lightseagreen
+        padding 5px
+
+      &__timeout
+        background color_green
+        padding 5px
+
+    &__day:hover
+      background-color color_bg_lite_hover
+
+    &__name
+      vertical-align top
+      text-align right
+      padding 5px
+      border-right 1px solid color_border
+
+    &__time
+      vertical-align top
+      padding 5px
+      border-right 1px solid color_border
+
+
+  .selected
+    cursor default
+    color #000 !important
+    background-color #9ad1f3
+
+  .selected:hover
+    color #fff !important
+    background-color #1d93db !important

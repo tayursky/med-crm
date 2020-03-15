@@ -1,0 +1,272 @@
+
+.client-set, .deal-set
+
+  .el-dialog
+    width 70%
+    min-width 600px
+    max-width 980px
+    border-radius 2px 2px 0 0
+
+  .el-tabs
+
+    *
+      vertical-align top
+
+    &__content
+      padding 0
+
+    &__header
+      margin 0 0 5px
+
+    &__nav-wrap
+      padding 0
+
+    &__item, &__item:first-child
+      padding 0 15px !important
+      user-select none
+
+    .buttons
+      font-size 0
+      margin 0 0 5px
+      text-align right
+
+      span
+        font-size 15px
+        padding 1px 0 0 1px
+        display inline-block
+
+      .el-button:first-child
+        border-left 1px solid color_border
+
+      .el-button
+        border-left none
+        font-size 18px
+        margin 0
+        border-radius 0
+
+    &__form
+      border 1px solid color_border
+      border-bottom none
+
+    tr.hover
+      background-color color_gray
+
+  .form_tab
+    margin 0 5px 5px
+
+    &__item
+      border 1px solid #cacaca
+      margin-bottom 8px
+
+    &__title
+      font-size 20px
+      padding 5px 8px
+      border-bottom 1px solid color_border
+      background-color color_gray_lite
+
+    &__table
+      width 100%
+      border-collapse collapse
+      border-spacing 0
+      border 1px solid color_border
+      border-bottom none
+
+      thead
+        td
+          font-size 14px
+          padding 5px 8px
+          border-bottom 1px solid color_border
+          border-right 1px solid color_border
+
+        td:last-child
+          border-right none
+
+  .tab_clients
+
+    .form_tab__table
+
+      .client
+        cursor pointer
+        border-bottom 1px solid color_border
+
+        &__full_name
+          padding 5px 8px
+
+        &__link
+          width 40px
+          font-size 16px
+          text-align center
+          padding 5px 0
+          border-left 1px solid color_border
+          margin 50% 0
+
+        &__link:hover
+          color #fff
+          background-color color_bg_hover
+
+        &__doc
+          display table-cell
+          padding 0
+
+          .el-button
+            background none
+            border 0
+            border-radius 0
+            padding 5px 12px 5px 8px
+
+      .client:hover
+        background-color color_gray
+
+  .tab_deals
+
+    .form_tab__table
+
+      .deal
+        cursor pointer
+        border-bottom 1px solid color_border
+
+        &__title
+          width 130px
+          text-align center
+          padding 5px 8px
+          border-right 1px solid color_border
+
+        &__persons
+          padding 4px 8px
+
+          &__item
+            padding 0
+
+        &__link
+          width 40px
+          font-size 16px
+          text-align center
+          padding 5px 0
+          border-left 1px solid color_border
+          margin 50% 0
+
+        &__link:hover
+          color #fff
+          background-color color_bg_hover
+
+      .deal:hover
+        background-color color_gray
+
+  .tab_tasks
+
+    .form_tab__table
+
+      .task
+        cursor pointer
+        border-bottom 1px solid color_border
+
+        &__time
+          width 120px
+          text-align center
+          padding 5px
+          border-right 1px solid color_border
+
+        &__source
+          text-align right
+          font-weight bold
+          padding 5px 8px
+          white-space: nowrap
+          border-right 1px solid color_border
+
+        &__title
+          font-weight bold
+          padding 5px 8px 2px
+
+        &__comment
+          padding 2px 8px 5px
+
+      .task:hover
+        background-color color_gray
+
+
+  .tab_comments
+
+    .form_tab__table
+
+      .comment
+        cursor pointer
+        border-bottom 1px solid color_border
+
+        &__created_at
+          width 120px
+          text-align center
+          padding 5px
+          border-right 1px solid color_border
+          background-color color_gray
+
+        &__source
+          text-align right
+          font-weight bold
+          padding 5px 8px
+          white-space: nowrap
+          border-right 1px solid color_border
+
+        &__text
+          padding 5px 8px
+
+      .comment:hover
+        background-color color_gray
+
+  .tab_history
+
+    .form_tab__table
+
+      .history
+        cursor pointer
+        border-bottom 1px solid color_border
+
+        &__time
+          width 115px
+          text-align center
+          padding 5px
+          border-right 1px solid color_border
+          background-color color_gray
+
+        &__value
+          &__title
+            font-weight bold
+            padding 5px 8px 2px
+
+          &__text
+            padding 2px 8px 5px
+
+        &__history_user
+          padding 2px 5px 0
+          text-align center
+          vertical-align middle
+
+
+      .history:hover
+        background-color color_gray
+
+  .tab_sms
+
+    .form_tab__table
+
+      .sms
+        cursor pointer
+        border-bottom 1px solid color_border
+
+        &__time
+          width 115px
+          text-align center
+          padding 5px
+          border-right 1px solid color_border
+          background-color color_gray
+
+        &__value
+          &__title
+            font-weight bold
+            padding 5px 8px 2px
+
+          &__text
+            padding 2px 8px 5px
+
+
+      .sms:hover
+        background-color color_gray

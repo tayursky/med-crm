@@ -1,0 +1,96 @@
+.directory
+  background-color #fff
+  padding 0 10px 10px
+
+  &__head
+    //border-bottom 1px solid color_border
+  &__title
+    float left
+    padding 10px 10px 0 0
+    font-size 20px
+
+  &__buttons
+    font-size 0
+    float right
+    padding 10px 0 5px
+
+  &__total
+    padding 0
+
+    &__item
+      display inline-block
+      margin 0 5px
+      border-right 1px solid color_border
+      padding 3px 10px 3px 0
+
+.table__display
+  margin 0 0 10px
+  border 1px solid color_gray
+  font-size 14px
+
+  th, td
+    border-top 1px solid gray
+    border-bottom 1px solid color_main
+    border-right 1px solid color_main
+    vertical-align top
+
+    .display__item
+      padding 2px 8px
+
+  td:first-child
+    border-left 1px solid color_main
+
+  thead
+    background-color color_main
+    color #fff
+
+    th
+      border-top 1px solid color_main
+      border-left 1px solid color_main
+      border-right 1px solid white
+
+      .display__item
+        padding 5px 8px 4px
+        display: inline-block;
+
+    th:last-child
+      border-right 1px solid color_main
+
+  tbody
+    tr:hover
+      background-color color_gray
+
+  &__actions
+    font-size 0
+
+  &__action
+    height: 21px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 5px;
+    font-size: 15px;
+    float: left;
+    border-right: 1px solid;
+
+  &__action:last-child
+    border-right none
+
+  &__action:hover
+    background-color color_border
+
+  &__action:before
+    font: normal normal normal 14px / 1 FontAwesome;
+    content "\f015"
+    padding 0 5px
+
+  &__action[name=edit]:before
+    content "\f040"
+
+  &__action[name=detail]:before
+    content "\f138"
+
+  &__action.link
+    text-decoration none
+
+  &__action.link:before
+    content "\f138"

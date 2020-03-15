@@ -1,0 +1,167 @@
+{% if not template_slice %}
+  {% extends 'inside/index.jinja2' %}
+{% endif %}
+
+{% block content %}
+
+  <div class="spider__btn" style="border: 1px solid #000; color: #fff">Click</div>
+
+  <div class="spider">
+    <div id="myModalBox" class="modal fade" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">${ title }</h4>
+            <button type="button" class="close" @click="hideMenu">×</button>
+          </div>
+
+          <div v-if="answer === 'done'" class="modal-body spider__done">
+            <div class="spider__done__title">Благодарим Вас за доверие к методу «Правка»!</div>
+            В ближайшее время мы свяжемся с Вами и подтвердим заявку.
+          </div>
+
+          <div v-else-if="form" class="modal-body">
+            <div v-if="form.data.discount > 0" class="spider__discount">
+              <span class="uppercase">${ form.data.promocode }</span>: скидка ${ form.data.discount }%
+            </div>
+            <template v-for="field_name in form.ordered_fields">
+              <div v-if="!form.fields[field_name].widget.is_hidden"
+                   class="form-group" :class="{'has-errors': field_name in form.errors}">
+
+                <div v-if="!form.fields[field_name].widget.is_hidden" class="row">
+                  <div class="col-5 form__label" :class="{'required_field': form.fields[field_name]['required']}">
+                    ${ form.fields[field_name].label }
+                  </div>
+                  <div class="col-7">
+                    <input v-if="form.fields[field_name].class == 'CharField' ||
+                                 form.fields[field_name].class == 'EmailField' ||
+                                 form.fields[field_name].class == 'DateField'"
+                           v-model="form.data[field_name]"
+                           class="form__input"
+                           :type="form.fields[field_name].widget.input_type"
+                           :required="!!form.fields[field_name]['required']">
+                    <select v-else-if="form.fields[field_name].class == 'ChoiceField'"
+                            v-model="form.data[field_name]"
+                            class="form__select">
+                      <option v-for="item in form.fields[field_name].widget.choices" :value="item.value">
+                        ${item.label}
+                      </option>
+                    </select>
+                  </div>
+                  <div v-if="field_name in form.errors" class="form-block__errors">
+                    <div v-for="error in form.errors[field_name]" class="form-block__errors__item">${ error }</div>
+                  </div>
+                </div>
+              </div>
+            </template>
+            <div v-if="form.errors.length > 0" class="form-block__errors">
+              <div v-for="error in form.errors" class="form-block__errors__item">${ error }</div>
+            </div>
+            <div v-if="form.non_field_errors.length > 0" class="form-block__errors">
+              <div v-for="error in form.non_field_errors" class="form-block__errors__item">${ error }</div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button v-if="answer === 'done'" type="button" class="btn btn-primary" @click="hideMenu">Закрыть</button>
+            <button v-else type="button" class="btn btn-primary" @click="showMenu('save')">Отправить заявку</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+{% block bottom_scripts %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/static/spider.css"/>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    $(spiderInit);
+
+    function spiderInit() {
+      $('.spider__btn').bind('click', spiderClick);
+    }
+
+    function spiderClick(clickEvent) {
+      spider.btnClick()
+    }
+
+    Vue.options.delimiters = ['${', '}'];
+    var spider = new Vue({
+      el: '.spider',
+      data: {
+        title: '',
+        modalShow: false,
+        answer: null,
+        form: null,
+      },
+
+      computed: {},
+
+      watch: {
+        'modalShow': function (value, fromValue) {
+          if (value === true) {
+            $("#myModalBox").modal('show');
+            this.showMenu();
+          } else {
+            $("#myModalBox").modal('hide');
+          }
+        },
+      },
+
+      mounted() {
+        $('#myModal').modal({
+          backdrop: 'static',
+          keyboard: false
+        });
+
+        var keys = {};
+        var search = window.location.search.substr(1);
+        search.split('&').forEach(function (item) {
+          item = item.split('=');
+          keys[item[0]] = item[1];
+        });
+        if (keys['a'] && keys['a'] !== '') {
+          localStorage.setItem('promo', keys['a']);
+        }
+      },
+
+      methods: {
+        btnClick(value) {
+          this.modalShow = !this.modalShow
+        },
+        showMenu(action) {
+          let params = {'promo': localStorage.getItem('promo')};
+          if (action === 'save') {
+            params = this.form.data;
+          }
+          axios
+          {#.get('http://crm.pravkaatlanta.ru/spider/', {params: params})#}
+            .get('http://127.0.0.1:8001/spider/', {params: params})
+            .then(response => {
+              this.title = response.data.title;
+              this.form = response.data.form;
+              this.answer = response.data.answer;
+            })
+            .catch(error => {
+              alert(error);
+            })
+            .finally(function () {
+            });
+        },
+        hideMenu() {
+          this.modalShow = false;
+        }
+      }
+    });
+  </script>
+
+{% endblock %}

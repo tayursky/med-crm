@@ -1,0 +1,30 @@
+# pip install -r ./requirements.txt
+
+Django==2.2.1
+django-crontab==0.7.1
+django-currentuser==0.4.2
+django-cors-headers==2.4.0
+django-debug-toolbar==1.10.1
+
+django-phonenumber-field==3.0.1
+phonenumbers==8.10.13
+
+django-extensions==2.1.7
+django-safedelete==0.5.1
+django-simple-history==2.7.2
+djangorestframework==3.9.0
+Jinja2==2.10
+MarkupSafe==1.1.0
+
+openpyxl==2.6.2  # выгрузка в xls
+WeasyPrint==51  # PDF
+
+psycopg2==2.7.6.1
+psycopg2-binary==2.7.6.1
+pytz==2018.9
+python-docx==0.8.10
+sqlparse==0.2.4
+
+lxml==4.4.2
+beautifulsoup4==4.8.1
+requests==2.22.0

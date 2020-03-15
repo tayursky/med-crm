@@ -1,0 +1,267 @@
+@import 'https://unpkg.com/element-ui/lib/theme-chalk/index.css';
+
+.lime
+  color #fff
+  background #00ed03
+
+.el-popper[x-placement^=bottom]
+  margin-top -3px
+  max-width 500px
+
+.el-color-picker
+  display block
+  margin 3px 0
+
+  &__trigger
+    padding: 0;
+
+.el-switch
+  height 33px
+
+.el-select
+  width 100%
+
+  &__caret.is-reverse
+    height: 32px
+
+  .el-input .el-select__caret
+    color #000
+
+.el-select-dropdown__list
+  padding: 0;
+
+.el-select-dropdown__item
+  padding 0 10px
+  color: #000
+  height: 28px;
+  line-height: 28px;
+
+.el-select-dropdown__item.hover, .el-select-dropdown__item:hover
+  background-color: color_focus
+
+.el-input.is-disabled .el-input__inner, .el-textarea.is-disabled .el-textarea__inner
+  color unset
+  background unset
+
+.el-select__caret.is-reverse
+  height 25px
+
+.el-input
+  width 100%
+
+  &__suffix
+    right 2px
+
+  &__inner
+    width 100% !important
+    color #000
+    height: 26px;
+    line-height: 26px;
+    outline: 0;
+    padding: 0 8px;
+    margin: 3px 0;
+    border: 1px solid color_border
+    border-radius: 2px;
+
+  &__icon
+    color color_border
+    line-height: 28px;
+
+.el-date-editor--daterange
+  width 225px !important
+
+  .el-range__icon
+    line-height 0
+
+  .el-range__close-icon
+    line-height 0
+
+  .el-range-separator
+    line-height 15px
+
+.el-date-editor .el-range-input
+  text-align left !important
+
+.el-tag.el-tag--info .el-tag__close
+  margin 3px 1px 0 0
+
+// *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***  el-dialog
+
+.el-dialog
+  max-width 800px
+  min-width 600px
+  margin-top 5px !important
+
+  .modal-loading
+    background url(/static/images/preloader.gif) no-repeat center #fff
+    height 50px
+    margin 0 auto
+
+  &__header
+    cursor auto
+    padding 0
+    height auto
+    line-height normal
+
+  &__title
+    font-size 20px
+    padding 6px 0 0 10px
+    margin 0
+    display inline-block
+    vertical-align top
+
+  &__headerbtn
+    position unset !important
+    top 0 !important
+    right 0 !important
+    float right !important
+    font-size 0 !important
+    border-radius 0 2px 0 0 !important
+    min-height 36px !important
+    padding 6px 10px 4px !important
+    vertical-align top
+
+    *
+      font-size 22px !important
+
+  &__headerbtn:hover
+    background-color color_bg_hover !important
+
+    i
+      color #fff !important
+
+  &__close
+    padding 0
+    color color_gray_dark !important
+
+
+  &__body
+    vertical-align unset !important
+    display inline-block
+    width 100%
+    margin: 0 auto;
+    padding 0
+    font-size 15px
+    background-color #fff
+    border none
+    border-top 1px solid color_border
+    border-radius 0
+
+  .modal-button
+    color color_main_text
+    padding: 8px 12px;
+    margin: 0;
+    border-radius: 0 0.25rem 0 0;
+    font-size: 18px;
+    border: none;
+    font-weight: normal;
+
+  .modal-button:hover
+    color color_main_text
+    background-color color_focus
+    opacity 1
+
+  &__footer
+    padding 0
+    text-align unset
+
+
+// *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***  el-button
+
+.el-button-group
+  vertical-align top
+
+  .el-button
+    margin 0 !important
+    border-color 1px solid color_border
+    border-right none !important
+
+  .el-button:last-child
+    border-right 1px solid color_border !important
+
+.el-button
+  vertical-align top
+  font-size 18px
+  padding 5px 15px
+
+  .text
+    font-size 15px
+    padding 2px 0
+    display inline-block
+
+  .el-button__text
+    font-size 13px
+    padding 3px 5px
+
+  [class*=el-icon-] + span
+    margin-left 8px
+
+.el-button + .el-button
+  margin-left 5px
+
+.el-button:hover, .el-button.hover
+  color #fff !important
+  background-color color_bg_hover !important
+
+// *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***  el-picker
+
+.el-date-range-picker .el-picker-panel__body
+  min-width 500px
+
+.el-picker-panel__icon-btn {
+  padding 0 3px !important
+  margin 5px 0 0 !important
+}
+
+.el-date-picker
+  &__header
+    margin 0 10px
+
+  &__header-label
+    padding 10px 5px 5px
+    display inline-block
+
+.el-picker-panel
+  color #000
+
+  &__content
+    position relative
+    margin 5px 15px
+
+  &__icon-btn
+    font-size 20px
+    padding 5px 3px
+
+.el-date-editor.el-input, .el-date-editor.el-input__inner
+  width 100%
+
+.el-date-editor--date .el-input__inner
+  padding-left 32px !important
+
+.el-date-table
+  font-size 13px
+
+  th
+    text-align center
+
+// *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***  el-message
+
+//.el-message
+//
+//  &__content
+//    font-size 16px !important
+//    color #fff !important
+//    padding 0 8px !important
+//
+//  &__closeBtn
+//    color #fff !important
+//    font-size 20px !important
+//
+//  .el-icon-success
+//    color #fff !important
+//
+//.el-message--success
+//  background-color #67c23a
+//  border-color #fff
+
+

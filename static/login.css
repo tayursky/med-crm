@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #dadada;
+    font-family: Arial;
+}
+
+.main-content {
+    background-color: #f5f5f5;
+}
+
+.login-container__block {
+    margin: 80px auto 0;
+    width: 420px;
+}
+
+.login-container__header {
+    background-color: #fff;
+    border-bottom: 3px solid #971c0a;
+    padding: 13px 20px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #971c0a;
+    text-align: right;
+}
+
+.login-container__message {
+    background-color: #fff;
+    padding: 20px;
+    font-size: 16px;
+    text-align: right;
+}
+
+.login-container__form {
+/ / color: #fff;
+    background-color: #fff;
+/ / #19a3c7;
+    padding-top: 15px;
+}
+
+.login-container__form .description {
+    padding: 0 20px 5px;
+    text-align: right;
+}
+
+.login-container__form .errorlist {
+    color: #c00200;
+    font-size: 15px;
+    margin: 0;
+    padding: 0 0 0;
+    text-align: right;
+    list-style-type: none;
+}
+
+.login-container__form .errorlist li {
+    margin: 5px 20px 0;
+}
+
+.login-container p {
+    margin: 0;
+    padding: 6px 16px;
+}
+
+.login-container p label {
+    display: inline-block;
+    float: left;
+    width: 170px;
+    text-align: right;
+    padding: 3px 15px 0 0;
+}
+
+.login-container p input {
+    padding: 3px 5px;
+    width: 185px;
+}
+
+.login-container__footer {
+    padding: 10px 20px 15px;
+    text-align: right;
+}
+
+.login-container__footer input[type=submit] {
+    color: #fff;
+    background: #19a3c7;
+    border: none;
+    font-size: 15px;
+    padding: 8px 28px;
+}
+
+.login-container__recover {
+    color: #19a3c7;
+    float: left;
+    display: inline-block;
+    font-size: 15px;
+    padding: 8px;
+}
+
+.login-container__recover:hover {
+    background-color: #ececec;
+}
+
+.login-container__registration {
+    color: #971c0a;
+    background: #ececec;
+    padding: 10px 20px;
+    display: block;
+    border-top: 1px solid #971c0a;
+}
+
+.login-container__registration:hover {
+    color: #fff;
+    background: #19a3c7;
+    border-top: 1px solid #19a3c7;
+    text-decoration: none;
+}
+
+.login-container__support {
+    padding: 10px 20px;
+    display: block;
+    margin-top: 10px;
+}
+
+.answer {
+    background: #fff;
+    padding: 30px 20px;
+    font-size: 18px;
+    text-align: right;
+}
+
+.registration {
+    margin: 50px auto 0;
+    width: 520px;
+}
+
+.registration p label {
+    width: 190px;
+}
+
+.registration p input {
+    padding: 3px 5px;
+    width: 290px;
+}

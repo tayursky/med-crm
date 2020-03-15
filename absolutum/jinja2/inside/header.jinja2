@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="header__logo">
+    <img class="header__logo__img" src="/static/images/logo.svg">
+  </div>
+</div>
+
+{% if request.user.is_authenticated %}
+  <div class="header__menu">
+    <div class="container">
+
+      {% if request.user.is_active and request.user.is_staff %}
+        <a class="header__menu__item" href="/"><i class="icon fa fa-tasks" aria-hidden="true"></i> CRM</a>
+      {% endif %}
+
+      <a class="header__menu__item" href="/partner/">
+        <i class="icon fa fa-user" aria-hidden="true"></i> Личный кабинет</a>
+      <!--a class="header__menu__item" href="/partner/help/">
+        <i class="icon fa fa-life-ring" aria-hidden="true"></i> Помощь</a-->
+      <a class="header__menu__item" href="/logout/">
+        <i class="icon fa fa-sign-out" aria-hidden="true"></i> Выйти</a>
+    </div>
+  </div>
+{% endif %}

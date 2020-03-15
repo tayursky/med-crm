@@ -1,0 +1,16 @@
+
+.model_actions
+  font-size 0
+  margin 0 0 10px
+  &__item, a:not([href]):not([tabindex])
+    color #ffffff
+    background-color color_main
+    display inline-block
+    padding 5px 10px
+    margin 0 1px 0 0
+    border None
+    border-radius 0
+    font-size 14px
+
+  &__item.disabled, &__item:disabled
+    background-color color_border

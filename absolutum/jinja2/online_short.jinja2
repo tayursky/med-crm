@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!--link rel="shortcut icon" href="/static/images/favicon.ico"-->
+
+  <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.11.0.css" type="text/css" media="all">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#id_phone').mask('+0 (000) 000-0000');
+    });
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="/static/online.css"/>
+  <title>Онлайн запись</title>
+</head>
+
+<body class="online-container">
+<div class="online-container__header">
+  <img class="header__logo__img" src="/static/images/logo.svg">
+</div>
+
+<form class="online-container__form" method="post" action="{{ url('online_short') }}">
+  {% if form.discount.value() %}
+    <div class="online-container__discount">
+      {{ form.promocode.value().upper() }}: скидка {{ form.discount.value() }}%
+    </div>
+  {% endif %}
+  <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+  {{ form.as_p() }}
+  {% for hidden in form.hidden_fields() %}
+    {{ hidden }}
+  {% endfor %}
+  <div class="online-container__footer">
+    <input type="submit" value="Отправить заявку"/>
+  </div>
+</form>
+</body>
+
+</html>

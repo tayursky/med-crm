@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  {% block css %}
+    <style type="text/css">
+      {{ resource_as_string("./static/paper/paper.css")|safe }}
+    </style>
+  {% endblock %}
+  <title>{{ name|title or '' }}{{ title or '' }}</title>
+</head>
+<body>
+
+{% from 'paper/macroses.jinja2' import
+      account_compensation_thead,
+      render_date,
+      render_sex,
+      represent_sex,
+      table_family,
+      render_bg,
+      render_snils %}
+
+<div class="content">
+  {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

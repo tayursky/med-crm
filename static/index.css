@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial;
+    background-color: #f5f5f5;
+}
+
+.header__menu__item:hover {
+    text-decoration: none;
+    padding: 16px 18px 12px;
+}
+
+.header__menu__item:hover {
+    color: #fff;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.625em;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+h3 {
+    margin: 5px 0;
+    font-size: 1.15em;
+}
+
+.col-element {
+    padding: 20px 10px 30px;
+    border-top: 1px solid #ccc;
+}
+
+#main_block {
+}
+
+.header {
+}
+
+.header__logo {
+    padding: 20px 20px 15px 0;
+    display: inline-block;
+}
+
+.header__logo__img {
+    width: 280px;
+}
+
+.header__menu {
+    height: 50px;
+    color: #fff;
+    background: #19a3c7;
+    text-align: right;
+    font-size: 0;
+}
+
+.header__menu__item {
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 16px 18px;
+    border-left: 1px solid #f5f5f5;
+}
+
+.header__menu__item .icon {
+    margin-right: 8px;
+}
+
+.header__menu__item:hover {
+    background: #137e9a;
+}
+
+.content {
+    background: #fff;
+    margin: 20px 30px;
+    padding: 35px 40px;
+}
+
+.mlm__form {
+    display: inline-block;
+    padding: 5px 30px 20px;
+    max-width: 500px;
+}
+
+.mlm__form .description {
+    margin: 10px 0;
+    text-align: right;
+}
+
+.mlm__form p {
+    width: 100%;
+    padding: 0;
+    float: left;
+    margin: 0 0 10px 0;
+}
+
+.mlm__form label {
+    width: 280px;
+    display: inline-block;
+    text-align: right;
+    padding: 2px 10px 0 0;
+    margin: 0;
+}
+
+.mlm__form input {
+    width: 150px;
+    display: inline-block;
+    float: right;
+    padding: 3px 5px;
+    font-size: 14px;
+}
+
+.mlm__form .errorlist {
+    color: #fc1921;
+    list-style: none;
+    text-align: right;
+}
+
+.mlm__form [type=submit] {
+    padding: 5px 15px;
+    margin-top: 10px;
+}
+
+.mlm__form__footer {
+}
+
+.recommend {
+    padding: 10px 20px;
+    margin: 5px 0 0;
+    background-color: #ffd3d3;
+}
+
+.mlm_account {
+    font-size: 16px;
+    background: #fff;
+    margin: 10px 0;
+    padding: 25px 30px;
+}
+
+.mlm_account__balance {
+    font-size: 19px;
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px 20px;
+}
+
+.mlm_account__balance .code, .mlm_account__balance .balance {
+    display: inline-block;
+}
+
+.mlm_account__balance .balance {
+    float: right;
+}
+
+.mlm_account ul {
+    margin: 10px 20px 20px;
+}
+
+.mlm_account li {
+    margin-top: 5px;
+}
+
+.mlm_account_title {
+    margin: 20px 30px 10px;
+}
+
+.mlm_account .line {
+    margin: 10px 0 15px;
+}
+
+.mlm_account .errorlist {
+    color: #c00200;
+    list-style: none;
+    padding: 5px 0;
+    text-align: right;
+    display: block;
+    margin: 0;
+}
+
+.mlm_account__form {
+    display: inline-block;
+}
+
+.mlm_account__form p {
+    margin: 0;
+}
+
+.mlm_account__form label {
+    margin: 0;
+    width: 150px;
+    display: inline-block;
+    padding: 0 5px 0 0;
+    vertical-align: top;
+}
+
+.mlm_account__form input, .mlm_account__form textarea {
+    display: inline-block;
+    width: 250px;
+    margin: 0;
+    font-size: 14px;
+    padding: 2px 6px;
+    vertical-align: top;
+}
+
+.mlm_account__form textarea {
+    width: 252px;
+    height: 65px;
+}
+
+.mlm_account__footer {
+    text-align: right;
+}
+
+.mlm_account .button {
+    width: unset;
+    cursor: pointer;
+    display: inline-block;
+    color: #000;
+    border: 1px solid #ccc;
+    background: #fff;
+    /*background: #19a3c7;*/
+    font-size: 14px;
+    text-decoration: none;
+    margin: 10px 0 0;
+    padding: 7px 13px;
+}
+
+.mlm_account .button .fa {
+    margin-right: 5px;
+}
+
+.mlm_account .button:hover {
+    color: #fff;
+    background: #19a3c7;
+}
+
+.mlm_account p {
+    padding: 0 0 5px;
+}
+
+.mlm_account__info {
+    vertical-align: top;
+    padding: 5px 0;
+}
+
+.mlm_account__pre {
+    font-family: Arial;
+    display: inline-block;
+    white-space: pre;
+}
+
+.mlm_account .promocode {
+    vertical-align: top;
+    font-size: 0;
+    display: inline-block;
+    margin: 0 0 10px;
+}
+
+.mlm_account .promocode__text, .mlm_account .promocode__url, .mlm_account .promocode__copy {
+    vertical-align: top;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 8px 0 0;
+}
+
+.mlm_account .promocode__text {
+    border: none;
+    background-color: #fff;
+}
+
+.mlm_account .promocode__text .icon {
+    margin-right: 10px;
+}
+
+.mlm_account .promocode__copy {
+    cursor: pointer;
+    color: #fff;
+    background-color: #19a3c7;
+    border-color: #19a3c7;
+    font-weight: bold;
+}
+
+.mlm_account .promocode__copy:hover {
+    color: #fff;
+    background-color: #137e9a;
+}
+
+.mlm_account__invites {
+    margin: 10px 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 1px solid #cacaca;
+    background-color: #fff;
+}
+
+.mlm_account__invites td:first-child:not(.sum) {
+    border-left: 1px solid #cacaca;
+}
+
+.mlm_account__invites td {
+    padding: 6px 12px;
+    border-right: 1px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+}
+
+.section {
+    padding: 5px 0 0;
+}
+
+.info_icon {
+    cursor: pointer;
+    vertical-align: top;
+    top: -4px;
+    position: relative;
+    background: #caeff8;
+    border-radius: 30px;
+    font-size: 15px;
+    padding: 3px 9px;
+    text-align: center;
+    border: 1px solid #19a3c7;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.info_icon:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #19a3c7;
+    border-color: #19a3c7;
+}
+
+.info_text {
+    font-size: 15px;
+    padding: 8px 12px;
+    background: #ffedc9;
+    margin: 0 0 10px;
+}
+
+.offer_accept {
+    text-align: center;
+    padding: 20px 0 50px;
+    display: block;
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+
+.offer_accept__accept {
+    display: inline-block;
+    padding: 8px 10px 7px 15px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    vertical-align: top;
+}
+
+.offer_accept__accept:hover {
+    background-color: #a5d6a7;
+}
+
+.offer_accept__accept input {
+    display: inline-block;
+    margin: 0 5px 0 12px;
+}
+
+.offer_accept [type=submit] {
+    display: inline-block;
+    min-height: 40px;
+    max-height: 40px;
+    margin-left: 15px;
+    padding: 0 15px;
+}
+
+.help_p {
+    margin-bottom: 10px;
+}
+
+
+.footer {
+    padding: 10px 0;
+    vertical-align: top;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.footer .partner_offer {
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+td.sum {
+    border: none;
+    border-bottom: 1px solid #cacaca;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+}

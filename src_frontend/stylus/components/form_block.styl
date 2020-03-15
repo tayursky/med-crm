@@ -1,0 +1,235 @@
+.form-block
+  padding 0
+
+  .form-group
+    margin 0
+    border-bottom 1px solid color_border
+    padding 0 5px 0 0
+
+    [the_class=interval]
+      border-left none
+
+  //.form-group:not(.related-field):not(.has-errors):nth-of-type(odd)
+  //  background-color color_gray_lite
+
+  &__label
+    padding 8px 10px 8px 13px
+    line-height 16px
+    text-align right
+
+  .required_field:before
+    content "*"
+    color color_red
+    font-size 25px
+    position absolute
+    margin-left -15px
+
+  .form-control
+    margin: 0;
+    padding: 0 5px 0 0;
+    border: none;
+    border-radius: 0;
+    line-height: normal;
+    background: none;
+
+  textarea
+    color #000
+    padding 2px 8px
+    margin 3px 0
+    font-size 14px
+    border-radius 3px
+    border 1px solid color_border
+    height 48px
+
+  .form-control select
+    background-color: #fff;
+
+  .form-control select:after
+    box-sizing: border-box;
+    color: red;
+
+
+  .has-errors
+    background-color #fff3f3
+
+  &__errors
+    color color_red
+
+    &__item
+      text-align right
+      padding 0 3px 5px
+
+  .label
+    color #000
+    padding 10px
+    line-height 16px
+    text-align right
+    font-size 15px
+
+  .form-control
+    margin: 0;
+    padding: 0 5px 0 0;
+    border: none;
+    border-radius: 0;
+    line-height: normal;
+    background: none;
+
+    select, input, textarea
+      padding 3px 5px
+      margin 5px 5px 5px 0
+      width: 100%;
+      font-size: 14px
+      border-radius: 3px;
+      border: 1px solid color_border
+
+    textarea
+      height 62px
+
+  .form-control select
+    background-color: #fff;
+
+  .form-control select:after
+    box-sizing: border-box;
+    color: red;
+
+  .has-errors, .errors-all
+    background-color color_red_lite
+
+
+  .form-errors
+    width 100%
+    color color_red
+    padding 0 0 5px
+
+    &__item
+      text-align right
+      padding 5px 5px 0
+      font-size 15px
+
+  .errors-all
+    border-bottom 1px solid color_border
+    padding 5px 0 10px !important
+
+    .form-errors__item
+      padding 5px 10px 0
+
+  .form-footer
+    flex-wrap wrap
+    padding 5px 5px 0
+    border unset
+    text-align: right
+
+    .btn, button
+      font-size 14px
+      margin-bottom 5px
+
+    .btn:not(:first-child), button:not(:first-child)
+      margin 0 0 5px 10px
+
+  .formset
+    &__title
+      border-bottom 1px solid color_border
+      background-color color_gray
+      padding 5px 10px
+      font-weight bold
+
+    &__head
+      line-height 20px
+      width calc(100% - 40px)
+
+      &__item
+        font-size: 14px
+        border-right 1px solid color_border
+        padding 3px 10px
+
+      &__item:last-child
+        border-right none
+
+    &__item
+      padding-left 5px
+
+      &__row
+        display flex
+        border-bottom 1px solid color_border
+
+      &__add, &__delete
+        border-radius 0
+        border-left 1px solid color_border
+        border-top none
+        border-bottom none
+        border-right none
+        cursor pointer
+        padding 3px 13px
+        font-size 18px
+        width 45px
+        text-align center
+
+      &__add:hover, &__delete:hover
+        background color_bg_hover
+        color #fff
+
+      &__delete
+        font-size 16px
+
+    //line-height: 37px;
+
+    .form-group
+      width calc(100% - 40px)
+      border none
+      padding 0
+
+  &__groups
+    &__user_groups
+      &__item:hover
+        background-color color_gray
+
+      &__item
+        cursor pointer
+        display inline-block
+        padding 5px 0 5px 10px
+        margin-right 5px
+        border 1px solid color_border
+
+        i
+          padding 0 5px
+
+  &__footer
+    display flow-root
+    padding 5px
+    border unset
+
+    .left-block
+      float left
+      margin-right auto
+
+    .el-button
+      min-height 30px
+      margin 0
+      background-color color_gray_dark
+      border none
+      border-radius 0
+
+    .el-button:hover, .el-button.hover
+      color #fff
+      background-color color_bg_hover
+
+  .form-button
+    color color_main_text
+    padding: 8px 12px;
+    margin: 0;
+    border-radius: 0 0.25rem 0 0;
+    font-size: 18px;
+    border: none;
+    font-weight: normal;
+
+  .form-button:hover
+    color color_main_text
+    background-color color_focus
+    opacity 1
+
+  .bg-danger
+    color #ffffff
+    opacity .5
+
+  .bg-danger:hover
+    opacity .75
