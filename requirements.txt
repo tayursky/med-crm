@@ -1,6 +1,6 @@
 # pip install -r ./requirements.txt
 
-Django==2.2.1
+Django==2.2.24
 django-crontab==0.7.1
 django-currentuser==0.4.2
 django-cors-headers==2.4.0
